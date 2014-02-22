@@ -11,7 +11,7 @@
 
 
 // Our map object.
-var Map = function Map(view) {
+var Map = function Map() {
 
 
 	// feel free to edit map options... we want to probably center by default on user location.
@@ -25,7 +25,7 @@ var Map = function Map(view) {
 
 	// init takes object of id 'map_canvas' and creates a map...
 	// TODO: use css to define map bounds.
-	this.init = function() { console.log("-- init the map"); this.map = new google.maps.Map($('#map_canvas'), mapOptions); }
+	this.init = function() { console.log("-- init the map"); this.map = new google.maps.Map($('#map_canvas')[0], mapOptions); }
 
 	this.init();
 }
