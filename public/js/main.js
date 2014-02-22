@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
-  // add code here
+  if (Map !== undefined) {
+    var map = new Map(this);
+  }
 
 });
