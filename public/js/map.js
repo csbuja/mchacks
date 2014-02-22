@@ -25,7 +25,7 @@ var Map = function Map(view) {
 
 	// init takes object of id 'map_canvas' and creates a map...
 	// TODO: use css to define map bounds.
-	this.init = function() { this.map = new google.maps.Map($('#map_canvas'), mapOptions); }
+	this.init = function() { console.log("-- init the map"); this.map = new google.maps.Map($('#map_canvas'), mapOptions); }
 
 	this.init();
 }
