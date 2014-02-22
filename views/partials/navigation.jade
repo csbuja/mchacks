@@ -9,13 +9,19 @@
       a.navbar-brand(href='/') Project name
     .collapse.navbar-collapse
       ul.nav.navbar-nav
-        li(class=title=='Home'?'active':undefined)
-          a(href='/') Home
-        li(class=title=='API Browser'?'active':undefined)
-          a(href='/api') API Browser
         li(class=title=='Contact'?'active':undefined)
           a(href='/contact') Contact
       ul.nav.navbar-nav.navbar-right
+        form.form-horizontal(role='form', method='POST')
+          input(type='hidden', name='_csrf', value=token)
+          .form-group
+            label(class='col-sm-2 control-label', for='position') Position
+          .col-sm-8
+            input.form-control(type='text', name='position', id='position', autofocus=true)
+          .form-group
+            label(class='col-sm-2 control-label', for='desination') 
+          .col-sm-8
+            input.form-control(type='text', name='destination', id='destination')
         if !user
           li(class=title=='Login'?'active':undefined)
             a(href='/login') Login
