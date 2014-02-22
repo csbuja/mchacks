@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 
 	// when a result is clicked, expand to show hidden information.
-	$('.results').click( function(){
+	$('.result').click( function(){
 
 
 
