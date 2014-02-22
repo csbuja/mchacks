@@ -11,7 +11,7 @@
 
 
 // Our map object.
-var Map = function Map() {
+var Map = function Map(view) {
 
 
 	// feel free to edit map options... we want to probably center by default on user location.
