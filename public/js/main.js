@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
-  // Place JavaScript code here...
+  // if we have a map, intialize it
+  if (Map !== undefined) {
+    Map.init();
+  }
 
 });
