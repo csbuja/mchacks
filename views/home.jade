@@ -1,22 +1,12 @@
 extends layout
-title
-	LeBusLeval
-description
-	Fuck it Ship Description
 
 block content
-  h1 Bootstrap starter template
-	header.hero2
-		
-	header.hero
-		.title
-			LeBus
+  #map-canvas
 
-	.mission
-		Mission:get the bus from A to B
-		.description
-			span.text
-				It is a mobile
-	
-	.footer
-		Here is footer content
+  .results-container
+    .result
+      This is a result
+      
+block append head
+  script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false")
+  script(src="/js/map.js")
