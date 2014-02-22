@@ -10,3 +10,15 @@ block content
 block append head
   script(src="/js/map.js")
   script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false")
+  .script
+    var loadMap = function()
+      {
+          var myOptions = {
+            center: new google.maps.LatLng(<%=lat%>, <%=lon%>),
+            zoom: <%=zoom%>,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          };
+          var map = new google.maps.Map(document.getElementById("map"),
+              myOptions);
+      };
+      window.onload= loadMap;
