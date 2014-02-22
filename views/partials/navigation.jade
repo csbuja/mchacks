@@ -8,7 +8,7 @@
         span.icon-bar
       a.navbar-brand(href='/') Project name
     .collapse.navbar-collapse
-      form.form-inline.header-form(role='form', method='POST', action='/busform', id='form')
+      form.form-inline.header-form(role='form', method='POST', action='/busform', id='theform')
         input(type='hidden', name='_csrf', value=token)
         label(class='control-label', for='position') From:
         input.form-control(type='text', name='position', id='position', autofocus=true)
