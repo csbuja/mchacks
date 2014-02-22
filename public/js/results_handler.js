@@ -5,7 +5,7 @@ $(document).ready(function () {
 	// DESTINATION triggers a search and loads results into the results_pg.
 	// on search, fill the results_pg with results.
 	$('.destination').change( function(){
-
+		$('.results_pg').empty();
 
 
 	});
