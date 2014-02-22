@@ -10,9 +10,7 @@ $(document).ready(function () {
 		
 		$('.result').remove();
 
-		performSearch(function(){
-			//$('.results_pg #'+$('.results_pg').children().length).append( $('.result') );
-		});
+		performSearch();
 
 	});
 
@@ -26,3 +24,8 @@ $(document).ready(function () {
 	});
 
 });
+
+function performSearch(){
+	//$('.results_pg #'+$('.results_pg').children().length).append( $('.result') );
+
+};
