@@ -15,7 +15,7 @@ block append head
       {
           var myOptions = {
             center: new google.maps.LatLng(<%=lat%>, <%=lon%>),
-            zoom: <%=zoom%>,
+            zoom: 4,
             mapTypeId: google.maps.MapTypeId.ROADMAP
           };
           var map = new google.maps.Map(document.getElementById("map"),
