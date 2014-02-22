@@ -7,6 +7,7 @@ $(document).ready(function(){
 });
 
 //runs the ajax
+
 function formajax(event)
 {
  if($('#position').value && $('#destination').value)
@@ -24,7 +25,6 @@ function formajax(event)
       alert("There's an error in your function");
     }
   
-  }
-  
+  });
   }
 }
