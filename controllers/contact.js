@@ -1,6 +1,4 @@
 var secrets = require('../config/secrets');
-//we actually want this
-var map = require('../public/js/map.js');
 //but not the rest of this
 var nodemailer = require("nodemailer");
 var smtpTransport = nodemailer.createTransport('SMTP', {
