@@ -18,7 +18,7 @@ function formajax(event)
     success:function(response)
     {
     //temperary
-    $(document).write('test this SHET');
+    console.log('testthis');
     },
     error: function(){
       alert("There's an error in your function");
