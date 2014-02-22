@@ -10,7 +10,7 @@
     .collapse.navbar-collapse
       form.form-inline.header-form(role='form', method='POST')
         input(type='hidden', name='_csrf', value=token)
-        label(class='control-label', for='position') Position
+        label(class='control-label', for='position') From:
         input.form-control(type='text', name='position', id='position', autofocus=true)
-        label(class='control-label', for='destination') Destination
+        label(class='control-label', for='destination') To:
         input.form-control(type='text', name='destination', id='destination')
