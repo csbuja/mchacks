@@ -11,12 +11,12 @@
       ul.nav.navbar-nav
         li(class=title=='Contact'?'active':undefined)
           a(href='/contact') Contact
-        form.form-horizontal(role='form', method='POST')
-          input(type='hidden', name='_csrf', value=token)
-          label(class='col-sm-2 control-label', for='position') Position
-          input.form-control(type='text', name='position', id='position', autofocus=true)
-          label(class='col-sm-2 control-label', for='destination') Destination
-          input.form-control(type='text', name='destination', id='destination')
+      form.form-horizontal(role='form', method='POST')
+        input(type='hidden', name='_csrf', value=token)
+        label(class='col-sm-2 control-label', for='position') Position
+        input.form-control(type='text', name='position', id='position', autofocus=true)
+        label(class='col-sm-2 control-label', for='destination') Destination
+        input.form-control(type='text', name='destination', id='destination')
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=title=='Login'?'active':undefined)
