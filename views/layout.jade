@@ -15,4 +15,14 @@ html
       .container
         include partials/flash
         block content
+         form.form-horizontal(role='form', method='POST')
+          input(type='hidden', name='_csrf', value=token)
+          .form-group
+            label(class='col-sm-2 control-label', for='position') Position
+          .col-sm-8
+            input.form-control(type='text', name='position', id='position', autofocus=true)
+          .form-group
+            label(class='col-sm-2 control-label', for='desination') 
+          .col-sm-8
+            input.form-control(type='text', name='destination', id='destination')
     include partials/footer
