@@ -1,7 +1,7 @@
 $(document).ready(function(){
  
    $('#position').on('change',formajax);
-   $('#destination').('change',formajax)
+   $('#destination').on('change',formajax)
 
 
 });
