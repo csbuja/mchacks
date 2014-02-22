@@ -25,37 +25,7 @@ var Map = function Map(view) {
 
 	// init takes object of id 'map_canvas' and creates a map...
 	// TODO: use css to define map bounds.
-	this.init = function() { this.map = new google.maps.Map($('#map_canvas')[0], mapOptions); }
+	this.init = function() { this.map = new google.maps.Map($('#map_canvas'), mapOptions); }
 
-
-	// list of points to be added to the map
-	this.points = []; // { lat:0.0, lng:0.0, name: "", time: Date() }
-
-	// list of markers that have already been placesd on the map.
-	this.markers = []; // array of markers already on map
-
-
-
-	// adds a point to this.points
-	this.addPoint = function(point) { this.points.push(point); }
-
-	this.renderAllPoints = function () {
-		// remove all old map data, *sort* the points
-		// and render each point ever ~300ms
-		// don't render the point if dist(this_pt,prev) === 0		
-	}
-
-	this.removeData = function() {
-		// reset distance, clear polypath and markers
-	}
-
-	this.renderSinglePoint = function(cb) {
-		// render a single point on the map
-		// pan the map to the new point
-		// make sure to update the polypath
-		// consider recursion :)
-	}
-
-	// call the initializer
 	this.init();
 }
