@@ -227,7 +227,7 @@ function gatherData(data)
 	// difference in time.
 
 
-	$('.results_pg').append($('<div />', { "class": 'results-head' }) );
+	$('.results_pg').append($('<div />', { "class": 'results' }) );
 	$('.results-head').append( 	
 		$('<div />', { 
 			"class": 'start',
