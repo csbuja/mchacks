@@ -59,6 +59,7 @@ function geocodeAddress(op){
 	if(op == true) address = document.getElementById('position').text;
 	else address = document.getElementById('destination').text;
 
+	console.log(address);
 	geocoder.geocode( { 'address': address}, function(results, status) {
 
 		// GEOCODE SUCCESSFUL
