@@ -175,7 +175,11 @@ function dropPin(pos1, pos2){
 			//icon: iconBase + '../img/mapEnd.png'
 		}));
 
-
+	var bounds = new google.maps.LatLngBounds ();
+	for (var i = 0; i < markers.length; i++) {
+		bounds.extend (markers[i]);
+	}
+	map.fitBounds (bounds);
 	// var request = {
  //   		origin:position,
  //    	destination:position2,
