@@ -9,6 +9,7 @@ var http = require('http');
 module.exports = function(options) {
   var app = options.app; //not actually used
   var command = options.param2;
+  console.log(options);
   var options = {
     host: 'webservices.nextbus.com',
     path: '/service/publicXMLFeed?a=stl&command=' + command
