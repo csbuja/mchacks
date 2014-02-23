@@ -9,6 +9,7 @@ exports.index = function(req, res) {
   //get the data from the api
   var parser = new xml2js.Parser();
   var extractedData = "";
+  var fullResponse = "";
   var options = {
     host: 'webservices.nextbus.com',
     port: 80,
@@ -17,8 +18,6 @@ exports.index = function(req, res) {
   };
   var req = http.request(options, function(res) {
     res.setEncoding('utf8');
-    
-    var fullResponse = "";
     
     res.on('data', function (chunk) {
       fullResponse += chunk;
