@@ -29,6 +29,7 @@ $(document).ready(function () {
 	$('#clear').click( function(){
 		directionDisplay.setMap(null);
 		clearOverlays();
+		map.clear();
 	});
 
 });
