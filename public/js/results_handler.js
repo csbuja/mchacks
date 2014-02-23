@@ -34,6 +34,7 @@ $(document).ready(function () {
 
 });
 
+
 function performSearch(){
 	//String s = $('.results_pg').children().length.toString();
 	// $('.results_pg').append( $('.result #'+s.toString() ) );
@@ -43,6 +44,7 @@ function performSearch(){
 
 // builds the map object
 function initializeMap() {
+	console.log("init");
 
 	var mapOptions = {
     	disableDefaultUI: true,
@@ -59,18 +61,20 @@ function initializeMap() {
 };
 
 function dropPin(lat, lng, lat2, lng2){
+
+	console.log("drop pins");
 	var position = new google.maps.LatLng( lat, lng);
 	var position2 = new google.maps.LatLng( lat2, lng2);
 
 	markers.push( new google.maps.Marker({
 				position: position,
-				map: this.map,
+				map: map,
 				draggable: false,
 				animation: google.maps.Animation.DROP
 			}));
 	markers.push( new google.maps.Marker({
 				position: position2,
-				map: this.map,
+				map: map,
 				draggable: false,
 				animation: google.maps.Animation.DROP
 			}));
