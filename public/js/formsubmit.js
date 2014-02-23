@@ -63,7 +63,7 @@ var formajax = function(event)
   clearOverlays();
  }
  }
-}
+};
  
    $('#position').on('change',formajax);
    $('#destination').on('change',formajax);
