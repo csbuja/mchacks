@@ -5,30 +5,30 @@ var http = require('http'),
 ////////// code to get xml from url
 module.exports = {
   get: function(command) {
-    console.log('export...'+command);
-    var parser = new xml2js.Parser();
-    var extractedData = "";
-    var options = {
+     //get xml
+  var options = {
       host: 'webservices.nextbus.com',
       port: 80,
-      path: '/service/publicXMLFeed?a=stl&command='+command,
+      path: '/service/publicXMLFeed?a=stl&command=routeList',
       method: 'GET'
     };
-    var req = http.request(options, function(res) {
-      res.setEncoding('utf8');
-      
-      var fullResponse = "";
-      
-      res.on('data', function (chunk) {
-        fullResponse += chunk;
-      });
-
-      parser.parseString(fullResponse, function(err,result){
-        //Extract the value from the data element
-        extractedData = result['data'];
-      });
-      return extractedData;
+  var fullResponse = '';
+  http.get(options, function(response) {
+    response.setEncoding('utf8');
+   
+    var parser = new xml2js.Parser();
+    parser.on('end', function(result) {
+      return result;
     });
-    return extractedData;
+        
+    response.on('data', function (chunk) {
+      fullResponse = fullResponse + chunk;
+    });
+    
+    response.on('end', function(result) {
+        parser.parseString(fullResponse);
+        console.log(fullResponse);
+    });
+  });
   }
 }
