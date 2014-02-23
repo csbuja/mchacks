@@ -1,5 +1,5 @@
 var map; // map object
-var directionsDisplay = new google.maps.DirectionsRenderer();
+var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
 var directionsService = new google.maps.DirectionsService();
 var geocoder = new google.maps.Geocoder();
 var latLng1 = null, latLng2 = null;
@@ -167,9 +167,6 @@ function dropPin(pos1, pos2){
     	{
     		directionsDisplay.setMap(map);
    			directionsDisplay.setDirections(response);
-   			var leg = response.routes[ 0 ].legs[ 0 ];
-        	makeMarker( leg.start_location, '../img/mapBegin.png', "title" );
-        	makeMarker( leg.end_location, '../img/mapEnd.png', 'title' );
    			gatherData( response['routes'][0] );
 
     	}
