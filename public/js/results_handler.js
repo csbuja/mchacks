@@ -14,12 +14,18 @@ $(document).ready(function () {
 	initializeMap();
 
 	$('#submit').click( function(){
-		clear();
+		console.log("submit button");
+		directionsDisplay.setMap(null);
+		clearOverlays();
 		geocodeAddress(true);
 		geocodeAddress(false);
 	});
 
-	$('#clear').click( function(){ clear(); });
+	$('#clear').click( function(){ 
+		console.log("clear button");
+		directionsDisplay.setMap(null);
+		clearOverlays();
+	});
 
 
 });
@@ -32,11 +38,6 @@ $(document).ready(function () {
 
 
 
-function clear(){
-		console.log("clear button");
-		directionsDisplay.setMap(null);
-		clearOverlays();
-}
 
 
 // ========================================================================================
@@ -75,7 +76,6 @@ function geocodeAddress(op){
 
 		if(latLng1 != null && latLng2 != null)
 		{
-			$('.result').remove();
 			dropPin(latLng1, latLng2);
 			performSearch( function(data){
 			// CREATE CHILD OBJECTS FOR RESULTS_PG;
