@@ -164,7 +164,7 @@ function dropPin(pos1, pos2){
 			map: map,
 			draggable: false,
 			animation: google.maps.Animation.DROP
-			//icon: iconBase + '../img/mapBegin.png'
+			icon: '../img/mapBegin.png'
 		}));
 
 	markers.push( new google.maps.Marker({
@@ -172,14 +172,9 @@ function dropPin(pos1, pos2){
 			map: map,
 			draggable: false,
 			animation: google.maps.Animation.DROP
-			//icon: iconBase + '../img/mapEnd.png'
+			icon: '../img/mapEnd.png'
 		}));
 
-	var bounds = new google.maps.LatLngBounds ();
-	for (var i = 0; i < markers.length; i++) {
-		bounds.extend (markers[i]);
-	}
-	map.fitBounds (bounds);
 	// var request = {
  //   		origin:position,
  //    	destination:position2,
