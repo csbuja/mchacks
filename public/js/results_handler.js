@@ -180,7 +180,7 @@ function dropPin(pos1, pos2){
 			map: map,
 			draggable: false,
 			animation: google.maps.Animation.DROP
-			icon: iconBase + '../img/mapEnd.png'
+			icon: icon
 		}));
 
 
