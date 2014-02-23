@@ -33,4 +33,6 @@ exports.index = function(req, res) {
     title: 'API Test',
     data: extractedData
   });
+  console.log(fullResponse);
+  console.log(extractedData);
 };
