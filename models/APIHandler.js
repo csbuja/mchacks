@@ -1,5 +1,7 @@
-var libxmljs = require('libxmljs');
-var http = require('http');
+//var libxmljs = require('libxmljs');
+//var http = require('http');
+var xml2js = require('xml2js');
+var fs = require('fs');
 
 /* return data to caller
  * param: (string) commandType
@@ -13,8 +15,8 @@ module.exports = function(command) {
     path: '/service/publicXMLFeed?a=stl&command=' + command
   };
   
-  function getResponse() {
-    http.get(options).on('response', function(res) {
+  //function getResponse() {
+    /*http.get(options).on('response', function(res) {
       var body = '';
       res.on('data', function(chunk) {
         body += chunk;
@@ -26,5 +28,12 @@ module.exports = function(command) {
         return ret;
       });
     });
-  }
+  }*/
+  
+  var parser = new xml2js.Parser();
+  return fs.readFile( './foo.xml', function(err, data) {
+      return parser.parseString(data, function (err, result) {
+          return console.dir(result);
+      });
+  });
 }
