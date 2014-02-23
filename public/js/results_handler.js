@@ -141,26 +141,19 @@ function initializeMap() {
 	newObj.setAttribute('id', 'result-head');
 	old.append(newObj);
 
-	$('.results_pg').append(
+	$('#result-head').append(
 		$('<div />', { "class": 'start', text:'Starting from:' })
 	);
-	$('.results_pg').append(
+	$('#result-head').append(
 		$('<div />', { "class": 'end', text:'Ending at:' })
 	);
-	$('.results_pg').append(
+	$('#result-head').append(
 		$('<div />', { "class": 'total-dist', text:'Distance:' })
 	);
-	$('.results_pg').append(
+	$('#result-head').append(
 		$('<div />', { "class": 'length', text:'Duration:' })
 	);
 
-
-
-	old = document.getElementById('result-head');
-	newObj = document.createElement('div');
-	newObj.setAttribute('id', 'start');
-	newObj.innerHTML = 'Starting from:';
-	old.append(newObj);
 };
 // ========================================================================================
 // ========================================================================================
