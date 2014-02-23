@@ -189,7 +189,9 @@ function gatherData(data)
 		}
 
 		var d = data.legs[i].distance.text.toString();
+		console.log(d);
 		d.replace(',', '');
+		console.log(d);
 		totalDist += parseFloat(d);
 	}
 
