@@ -16,10 +16,10 @@ exports.index = function(req, res) {
     path: '/service/publicXMLFeed?a=stl&command=routeList',
     method: 'GET'
   };
-  var req = http.request(options, function(res) {
-    res.setEncoding('utf8');
+  var request = http.request(options, function(response) {
+    response.setEncoding('utf8');
     
-    res.on('data', function (chunk) {
+    response.on('data', function (chunk) {
       fullResponse += chunk;
       console.log(chunk);
     });
