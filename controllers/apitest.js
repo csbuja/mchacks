@@ -29,10 +29,10 @@ exports.index = function(req, res) {
       extractedData = result['data'];
     });
   });
+  console.log(fullResponse);
+  console.log(extractedData);
   res.render('apitest', {
     title: 'API Test',
     data: extractedData
   });
-  console.log(fullResponse);
-  console.log(extractedData);
 };
