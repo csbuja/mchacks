@@ -225,9 +225,9 @@ function gatherData(data)
 		}));
 
 	// difference in time.
-	
 
-	$('.results_pg').append($('<div />', { "class": 'results-head' }); );
+
+	$('.results_pg').append($('<div />', { "class": 'results-head' }) );
 	$('.results-head').append( 	
 		$('<div />', { 
 			"class": 'start',
@@ -253,7 +253,7 @@ function gatherData(data)
 		});
 	);
 
-	$('.results_pg').append($('<div />', { "class": 'result' }); );
+	$('.results_pg').append($('<div />', { "class": 'result' }) );
 	$('.result').append( 	
 		$('<div />', { 
 			"class": 'start',
