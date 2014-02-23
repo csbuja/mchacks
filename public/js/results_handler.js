@@ -186,6 +186,7 @@ function dropPin(pos1, pos2){
     	if (status == google.maps.DirectionsStatus.OK)
     	{
    			directionsDisplay.setDirections(response);
+   			console.log(response);
     	}
   	});
 };
