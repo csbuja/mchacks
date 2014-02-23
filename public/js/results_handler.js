@@ -86,6 +86,7 @@ function geocodeAddress(op){
 
 	if(latLng1 != null && latLng2 != null)
 	{
+		console.log("drop pins");
 		$('.result').remove();
 		dropPin(latLng1, latLng2);
 		performSearch( function(data){
