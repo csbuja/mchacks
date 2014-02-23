@@ -48,7 +48,7 @@ var data = (function(command) {
 exports.index = function(req, res) {
   res.render('apitest', {
     title: 'API Test',
-    data: routeList
+    data: data
   });
-  console.log(routeList);
+  console.log(data);
 };
