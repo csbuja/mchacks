@@ -26,6 +26,8 @@ $(document).ready(function () {
 		$('.result').remove();
 		directionsDisplay.setMap(null);
 		clearOverlays();
+		$('#position').prop('value','');
+		$('#destination').prop('value','');
 	});
 
 
