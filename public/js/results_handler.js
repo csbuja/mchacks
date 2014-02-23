@@ -186,7 +186,7 @@ function dropPin(pos1, pos2){
     	if (status == google.maps.DirectionsStatus.OK)
     	{
    			directionsDisplay.setDirections(response);
-   			console.log(response);
+   			gatherData( response['routes'][0] );
     	}
   	});
 };
@@ -199,6 +199,21 @@ function clearOverlays() {
     markers[i].setMap(null);
   }
   markers.length = 0;
+}
+
+function gatherData(data)
+{
+	var totalDist = 0;
+	for(int i = 0; i < data.length; i++)
+	{
+		if(i == 0);
+		else if(i == data.length-1);
+
+		totalDist += data[i].distance.text.parseInt();
+	}
+
+	console.log(totalDist);
+
 }
 
 
