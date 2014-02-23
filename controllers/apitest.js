@@ -2,6 +2,8 @@
 * GET /
 * Home page.
 */
+var xml2js = require('xml2js');
+
 exports.index = function(req, res) {
   //get the data from the api
   var parser = new xml2js.Parser();
