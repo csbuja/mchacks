@@ -210,6 +210,7 @@ function gatherData(data)
 	var departing_time;
 	var departing_add;
 	var arriving_add;
+	var duration;
 
 	for(var i = 0; i < data.legs.length; i++)
 	{
@@ -218,11 +219,9 @@ function gatherData(data)
 		{
 			departing_time = data.legs[i].departure_time.text;
 			departing_add = data.legs[i].start_address;
-		}
-		else if(i == data.length-1)
-		{
 			arriving_time = data.legs[i].arriving_time.text;
 			arriving_add = data.legs[i].end_address;
+			duration = data.legs[i].duration.text;
 		}
 
 		totalDist += parseFloat(data.legs[i].distance.text);
