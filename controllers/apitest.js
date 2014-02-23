@@ -22,16 +22,16 @@ exports.index = function(req, res) {
    
     var parser = new xml2js.Parser();
     parser.on('end', function(result) {
-      eyes.inspect(result);
       res.render('apitest', {
         title: 'API Test',
-        data: fullResponse
+        data: result
       });
     });
         
     response.on('data', function (chunk) {
       fullResponse = fullResponse + chunk;
     });
+    
     response.on('end', function(result) {
         parser.parseString(fullResponse);
         console.log(fullResponse);
