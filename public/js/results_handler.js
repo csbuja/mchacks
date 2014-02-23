@@ -18,7 +18,7 @@ $(document).ready(function () {
 	// when a result is clicked, expand to show hidden information.
 	$('.result').click( function(){
 
-
+		console.log('click click');
 
 
 	});
@@ -26,6 +26,8 @@ $(document).ready(function () {
 });
 
 function performSearch(){
-	//$('.results_pg #'+$('.results_pg').children().length).append( $('.result') );
+	$('.results_pg').append( $('.result #'+$('.results_pg').children().length) );
+	$('.results_pg').append( $('.result #'+$('.results_pg').children().length) );
+	$('.results_pg').append( $('.result #'+$('.results_pg').children().length) );
 
 };
