@@ -13,7 +13,7 @@ module.exports = function(options) {
   var command = options.param2;
   var options = {
     host: 'webservices.nextbus.com',
-    path: '/service/publicXMLFeed?a=stl&command=' + command;
+    path: '/service/publicXMLFeed?a=stl&command=' + command
   };
   
   return http.get(options).on('response', function(response) {
