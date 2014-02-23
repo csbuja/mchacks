@@ -3,7 +3,7 @@
 * Home page.
 */
 
-var data = require('RouteList');
+var data = require('RouteList.js');
 
 exports.index = function(req, res) {
   res.render('apitest', {
