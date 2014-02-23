@@ -15,6 +15,10 @@ $(document).ready(function () {
 
 	$('#header-form').submit( function(event){
 		event.preventDefault();
+		//clear errors
+		removeError('#position');
+		removeError('#destination');
+		//do submit
 		console.log("submit button");
 		$('.result').remove();
 		directionsDisplay.setMap(null);
@@ -29,6 +33,9 @@ $(document).ready(function () {
 		clearOverlays();
 		$('#position').prop('value','');
 		$('#destination').prop('value','');
+		//clear errors
+		removeError('#position');
+		removeError('#destination');
 	});
 
 
@@ -68,14 +75,14 @@ function geocodeAddress(){
     			}
     			else 
     			{
-    				alert("Please enter a more specific address in the TO field.");
+    				showError('#destination');
     			}
 			});
 
     	}
     	else 
     	{
-    		alert("Please enter a more specific address in the FROM field.");
+    		showError('#position');
     	}
 
     });
@@ -131,8 +138,15 @@ function initializeMap() {
 
 
 
+// ========================================================================================
+// error formatting functions
+function showError(itemSelector){
+	$(itemSelector).addClass('has-error');
+}
 
-
+function clearErrors(itemSelector){
+	$(itemSelector).removeClass('has-error');
+}
 
 
 
@@ -149,10 +163,14 @@ function dropPin(pos1, pos2){
   	directionsService.route(request, function(response, status){
     	if (status == google.maps.DirectionsStatus.OK)
     	{
+    		
     		directionsDisplay.setMap(map);
    			directionsDisplay.setDirections(response);
    			gatherData( response['routes'][0] );
 
+    	} else {
+    		showError('#position');
+    		showError('#destination');
     	}
   	});
 };
