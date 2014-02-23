@@ -31,7 +31,7 @@ module.exports = function(command) {
   }*/
   
   var parser = new xml2js.Parser();
-  return fs.readFile( './foo.xml', function(err, data) {
+  return fs.readFile( 'http://'+options.host+options.path, function(err, data) {
       return parser.parseString(data, function (err, result) {
           return console.dir(result);
       });
