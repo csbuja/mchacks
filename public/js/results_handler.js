@@ -125,17 +125,10 @@ function performSearch(cb){
 function initializeMap() {
 	console.log("init");
 
-	var center;
-	if (navigator.geolocation) {
-    	navigator.geolocation.getCurrentPosition(function (position) {
-    		center = new google.maps.LatLng(position.coords.lat, position.coords.lng);
-    	});
-    }
-
 	var mapOptions = {
     	disableDefaultUI: true,
     	zoom: 11,
-		center: center
+		center: new google.maps.LatLng(42.33, -83.04);
 	};
   	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
