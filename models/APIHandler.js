@@ -28,6 +28,7 @@ module.exports = {
         extractedData = result['data'];
       });
     });
+    console.log(extractedData);
     return extractedData;
   }
 }
