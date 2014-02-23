@@ -1,3 +1,4 @@
+var libxmljs = require('libxmljs');
 var http = require('http');
 
 /* return data to caller
