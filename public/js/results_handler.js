@@ -29,8 +29,8 @@ $(document).ready(function () {
 });
 
 function performSearch(){
-	String s = $('.results_pg').children().length.toString();
-	 $('.results_pg').append( $('.result #'+s.toString() ) );
+	//String s = $('.results_pg').children().length.toString();
+	// $('.results_pg').append( $('.result #'+s.toString() ) );
 
 };
 
