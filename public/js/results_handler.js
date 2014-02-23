@@ -15,6 +15,8 @@ $(document).ready(function () {
 
 	$('#header-form').submit( function(event){
 		event.preventDefault();
+		//hide results (because there may or may not be any)
+		$('.results_pg').hide();
 		//clear errors
 		clearError('#position');
 		clearError('#destination');
@@ -72,6 +74,8 @@ function geocodeAddress(){
     			{
     				latLng2 = results[0].geometry.location;
     				dropPin(latLng1, latLng2);
+    				//show results
+				$('.results_pg').show();
     			}
     			else 
     			{
