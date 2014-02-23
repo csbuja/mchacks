@@ -23,6 +23,7 @@ $(document).ready(function () {
 
 	$('#clear').click( function(){ 
 		console.log("clear button");
+		$('.result').remove();
 		directionsDisplay.setMap(null);
 		clearOverlays();
 	});
