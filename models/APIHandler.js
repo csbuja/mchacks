@@ -23,8 +23,7 @@ module.export = function(command) {
     });
     
     res.on('end', function(){
-      parser.parseString(fullResponse);
-      console.log(item.title + '\n');
+      return parser.parseString(fullResponse);
     });
   });
   req.on('error', function(e) {
