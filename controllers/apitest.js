@@ -32,9 +32,10 @@ exports.index = function(req, res) {
     response.on('data', function (chunk) {
       fullResponse = fullResponse + chunk;
     });
-
-    parser.parseString(fullResponse);
-    console.log(fullResponse);
+    response.on('end', function(result) {
+        parser.parseString(fullResponse);
+        console.log(fullResponse);
+    });
   });
   
   
