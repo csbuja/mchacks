@@ -177,17 +177,17 @@ function dropPin(pos1, pos2){
 			icon: '../img/mapEnd.png'
 		}));
 
-	// var request = {
- //   		origin:position,
- //    	destination:position2,
- //    	travelMode: google.maps.TravelMode.TRANSIT
- //  	};
- //  	directionsService.route(request, function(response, status){
- //    	if (status == google.maps.DirectionsStatus.OK)
- //    	{
- //   			directionsDisplay.setDirections(response);
- //    	}
- //  	});
+	var request = {
+   		origin:pos1,
+    	destination:pos2,
+    	travelMode: google.maps.TravelMode.TRANSIT
+  	};
+  	directionsService.route(request, function(response, status){
+    	if (status == google.maps.DirectionsStatus.OK)
+    	{
+   			directionsDisplay.setDirections(response);
+    	}
+  	});
 };
 // ========================================================================================
 // ========================================================================================
