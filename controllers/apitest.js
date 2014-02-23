@@ -16,7 +16,7 @@ exports.index = function(req, res) {
       path: '/service/publicXMLFeed?a=stl&command=routeList',
       method: 'GET'
     };
-  var request = http.request(options, function(response) {
+  http.get(options, function(response) {
     response.setEncoding('utf8');
    
     var parser = new xml2js.Parser();
