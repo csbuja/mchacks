@@ -18,8 +18,7 @@ $(document).ready(function () {
 		$('.result').remove();
 		directionsDisplay.setMap(null);
 		clearOverlays();
-		geocodeAddress(true);
-		geocodeAddress(false);
+		geocodeAddress();
 	});
 
 	$('#clear').click( function(){ 
@@ -45,74 +44,42 @@ $(document).ready(function () {
 // ========================================================================================
 // helper function to geocode.
 
-function geocodeAddress(op){
-	// op == true     --> position
-	// op == false    --> destination
+function geocodeAddress(){
 
-	var address;
-	if(op == true) address = document.getElementById('position').value;
-	else address = document.getElementById('destination').value;
+
+	var address = document.getElementById('position').value;
 
 	geocoder.geocode( { 'address': address}, function(results, status) {
 
 		// GEOCODE SUCCESSFUL
     	if (status == google.maps.GeocoderStatus.OK)
     	{
+			latLng1 = results[0].geometry.location;
+			address = document.getElementById('destination').value;
 
-    		if(op == true) latLng1 = results[0].geometry.location;
-    		else latLng2 = results[0].geometry.location;
+			geocoder.geocode( { 'address': address}, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK)
+    			{
+    				latLng2 = results[0].geometry.location;
+    				dropPin(latLng1, latLng2);
+    			}
+    			else 
+    			{
+    				alert("Please enter a more specific address in the TO field.");
+    			}
+			});
+
     	}
     	else 
     	{
-    		if(op == true)
-   			{
-   				latLng1 = null;
-    			console.log("- position geocode was not successful -");
-    		}
-    		else
-    		{
-   				latLng2 = null;
-    			console.log("- destination geocode was not successful -");
-    		}
+    		alert("Please enter a more specific address in the FROM field.");
     	}
-
-		if(latLng1 != null && latLng2 != null)
-		{
-			dropPin(latLng1, latLng2);
-			performSearch( function(data){
-			// CREATE CHILD OBJECTS FOR RESULTS_PG;
-
-			});
-		}
-
-
 
     });
 
 }
 // ========================================================================================
 // ========================================================================================
-
-
-
-
-
-
-
-
-// ========================================================================================
-// helper function to perform search.
-
-function performSearch(cb){
-	var data;
-	//String s = $('.results_pg').children().length.toString();
-	// $('.results_pg').append( $('.result #'+s.toString() ) );
-
-	cb(data); // CREATE CHILD OBJECTS.
-};
-// ========================================================================================
-// ========================================================================================
-
 
 
 
