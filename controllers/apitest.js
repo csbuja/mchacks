@@ -37,12 +37,6 @@ var data = (function(command) {
   var jsonstring = "";
   var jsonObj;
   var parser = new xml2js.Parser();
-  parser.addListener('end', function(result) {
-      jsonstring = JSON.stringify(result);
-      jsonObj = JSON.parse(jsonstring);
-      
-      return jsonObj;
-  });
 })('routeList');
 
 exports.index = function(req, res) {
