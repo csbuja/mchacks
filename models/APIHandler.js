@@ -1,6 +1,5 @@
 var libxmljs = require('libxmljs');
 var http = require('http');
-var XmlStream = require('xml-stream');
 
 /* return data to caller
  * param: (string) commandType
@@ -17,9 +16,8 @@ module.exports = function(options) {
   };
   
   return http.get(options).on('response', function(response) {
-    var xml = new XmlStream(response, 'utf8');
-    console.log(xml);
-    //return libxmljs.parseXmlString(xml);
+    console.log(response);
+    return libxmljs.parseXmlString(response);
     return {};
   });
 }
