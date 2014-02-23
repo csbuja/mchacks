@@ -13,13 +13,13 @@ $(document).ready(function () {
 
 	initializeMap();
 
-	$('.header-form').submit( function(event){
+	$('#header-form').submit( function(event){
+		event.preventDefault();
 		console.log("submit button");
 		$('.result').remove();
 		directionsDisplay.setMap(null);
 		clearOverlays();
 		geocodeAddress();
-		event.preventDefault();
 	});
 
 	$('#clear').click( function(){ 
