@@ -11,18 +11,15 @@ getData = function(command) {
     method: 'GET'
   };
   var req = http.request(options, function(res) {
-    console.log('STATUS: ' + res.statusCode);
-    console.log('HEADERS: ' + JSON.stringify(res.headers));
     res.setEncoding('utf8');
     
     var fullResponse = "";
     
     res.on('data', function (chunk) {
-      //console.log('BODY: ' + chunk);
-      fullResponse = fullResponse+chunk;
+      fullResponse += chunk;
     });
     
-    res.on('end', function(){
+    return res.on('end', function(){
       console.log(fullResponce);
       return parser.parseString(fullResponse);
     });
