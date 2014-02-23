@@ -1,6 +1,6 @@
-var apiData = require('../models/APIHandler')('routeList');
+var apiData = require('../models/APIHandler');
 
 module.export = function() {
   //This needs more actual functionality
-  return apiData;
+  return apiHandler.getData('routeList');
 }
