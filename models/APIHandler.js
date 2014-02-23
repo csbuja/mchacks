@@ -17,7 +17,6 @@ module.exports = function(options) {
   
   return http.get(options).on('response', function(response) {
     console.log(response);
-    //return libxmljs.parseXmlString(response);
-    return {};
+    return libxmljs.parseXmlFile(response);
   });
 }
