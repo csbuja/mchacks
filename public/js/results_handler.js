@@ -163,16 +163,16 @@ function dropPin(pos1, pos2){
 			position: pos1,
 			map: map,
 			draggable: false,
-			animation: google.maps.Animation.DROP
-			icon: 'img/mapBegin.png'
+			animation: google.maps.Animation.DROP,
+			icon: '../img/mapBegin.png'
 		}));
 
 	markers.push( new google.maps.Marker({
 			position: pos2,
 			map: map,
 			draggable: false,
-			animation: google.maps.Animation.DROP
-			icon: 'img/mapEnd.png'
+			animation: google.maps.Animation.DROP,
+			icon: '../img/mapEnd.png'
 		}));
 
 	// var request = {
