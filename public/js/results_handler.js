@@ -15,6 +15,7 @@ $(document).ready(function () {
 
 	$('#submit').click( function(){
 		console.log("submit button");
+		$('.result').remove();
 		directionsDisplay.setMap(null);
 		clearOverlays();
 		geocodeAddress(true);
