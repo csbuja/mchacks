@@ -26,7 +26,7 @@ exports.index = function(req, res) {
     });
         
     response.on('data', function (chunk) {
-      fullResponse += chunk;
+      fullResponse = fullResponse + chunk;
     });
 
     parser.parseString(fullResponse);
