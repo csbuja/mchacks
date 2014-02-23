@@ -8,17 +8,16 @@ var fs = require('fs'),
 
 exports.index = function(req, res) {
   //get the data from the api
-   
-  var parser = new xml2js.Parser();
-  
-  parser.on('end', function(err,result) {
-    eyes.inspect(result);
-  });
   
   //get xml
   var request = http.request(options, function(err,response) {
     response.setEncoding('utf8');
-    
+   
+    var parser = new xml2js.Parser();
+    parser.on('end', function(err,result) {
+      eyes.inspect(result);
+    });
+        
     response.on('data', function (chunk) {
       fullResponse += chunk;
       console.log(chunk);
