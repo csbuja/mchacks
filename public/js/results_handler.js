@@ -214,14 +214,13 @@ function gatherData(data)
 
 	for(var i = 0; i < data.legs.length; i++)
 	{
-		console.log(i);
 		if(i == 0)
 		{
-			departing_time = data.legs[i].departure_time.text;
+			departing_time = data.legs[i].departure_time['text'];
 			departing_add = data.legs[i].start_address;
-			arriving_time = data.legs[i].arriving_time.text;
+			arriving_time = data.legs[i].arriving_time['text'];
 			arriving_add = data.legs[i].end_address;
-			duration = data.legs[i].duration.text;
+			duration = data.legs[i].duration['text'];
 		}
 
 		totalDist += parseFloat(data.legs[i].distance.text);
