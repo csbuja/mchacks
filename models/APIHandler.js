@@ -3,7 +3,7 @@ var http = require('http'),
   xml2js = require('xml2js');
 
 ////////// code to get xml from url
-(function (command) {
+var data = function(command) {
   var options = {
     host: 'webservices.nextbus.com',
     port: 80,
@@ -39,4 +39,4 @@ var http = require('http'),
       
       return jsonObj;
   });
-})();
+}
