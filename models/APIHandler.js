@@ -5,7 +5,7 @@ var http = require('http'),
 ////////// code to get xml from url
 module.exports = {
   get: function(command) {
-    console.log('export...'+command);
+    /*console.log('export...'+command);
     var parser = new xml2js.Parser();
     var options = {
       host: 'webservices.nextbus.com',
@@ -29,6 +29,7 @@ module.exports = {
         console.log(extractedData);
         return {};//extractedData;
       });
-    });
+    });*/
+    return {};
   }
 }
