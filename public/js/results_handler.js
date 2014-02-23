@@ -18,6 +18,13 @@ $(document).ready(function () {
 		geocodeAddress(false);
 	});
 
+	$('#clear').click( function(){
+		console.log("clear button");
+		directionsDisplay.setMap(null);
+		clearOverlays();
+		map.clear();
+	});
+
 
 });
 
@@ -25,12 +32,7 @@ $(document).ready(function () {
 // ========================================================================================
 
 
-$('#clear').click( function(){
-		console.log("clear button");
-		directionsDisplay.setMap(null);
-		clearOverlays();
-		map.clear();
-	});
+
 
 
 
