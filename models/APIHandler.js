@@ -3,7 +3,8 @@ var http = require('http'),
   xml2js = require('xml2js');
 
 ////////// code to get xml from url
-module.exports = function(command) {
+module.exports {
+  get: function(command) {
     console.log('export...'+command);
     var parser = new xml2js.Parser();
     var options = {
@@ -30,3 +31,4 @@ module.exports = function(command) {
       });
     });
   }
+}
