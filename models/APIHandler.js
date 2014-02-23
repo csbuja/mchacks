@@ -6,7 +6,7 @@ var http = require('http');
  *      predictionsForMultiStops, schedule, messages,
  *      vehicleLocations, 
  */
-module.exports = function(comman) {
+module.exports = function(command) {
   var options = {
     host: 'webservices.nextbus.com',
     path: '/service/publicXMLFeed?a=stl&command=' + command
