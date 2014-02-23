@@ -1,7 +1,7 @@
 var apiData = require('../models/APIHandler');
 
-(function () {
+module.exports = function () {
   //This needs more actual functionality
   return apiHandler.getData('routeList');
-})();
+};
   
