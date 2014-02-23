@@ -13,10 +13,13 @@ module.exports = function(command) {
     path: '/service/publicXMLFeed?a=stl&command=' + command
   };
   
-  return http.get(options).on('response', function(response) {
-    return response.on("data", function(chunk) {
-      console.log("BODY: " + chunk);
-      return libxmljs.parseXmlString(chunk);
+  return http.get(options).on('response', function(res) {
+    var body = '';
+    res.on('data', function(chunk) {
+      body += chunk;
+    });
+    return res.on('end', function() {
+      return libxmljs.parseXmlString(body);
     });
   });
 }
