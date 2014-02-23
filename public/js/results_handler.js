@@ -75,7 +75,7 @@ function geocodeAddress(){
     				latLng2 = results[0].geometry.location;
     				dropPin(latLng1, latLng2);
     				//show results
-				$('.results_pg').show();
+				$('.results_pg').fadeIn();
     			}
     			else 
     			{
