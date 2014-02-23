@@ -3,8 +3,11 @@
 * Home page.
 */
 
+var data = require('RouteList');
+
 exports.index = function(req, res) {
   res.render('apitest', {
-    title: 'API Test'
+    title: 'API Test',
+    data: data
   });
 };
