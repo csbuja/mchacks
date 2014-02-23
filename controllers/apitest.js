@@ -3,7 +3,7 @@
 * Home page.
 */
 
-var routeList = require('../models/RouteList');
+var routeList = require('../models/RouteList')();
 
 exports.index = function(req, res) {
   res.render('apitest', {
@@ -11,5 +11,5 @@ exports.index = function(req, res) {
     data: routeList
   });
   console.log('route list');
-  console.log(routeList());
+  console.log(routeList);
 };
