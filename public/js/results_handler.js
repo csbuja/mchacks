@@ -14,6 +14,7 @@ $(document).ready(function () {
 	initializeMap();
 
 	$('#submit').click( function(){
+		clear();
 		geocodeAddress(true);
 		geocodeAddress(false);
 	});
@@ -76,7 +77,6 @@ function geocodeAddress(op){
 
 		if(latLng1 != null && latLng2 != null)
 		{
-			clear();
 			$('.result').remove();
 			dropPin(latLng1, latLng2);
 			performSearch( function(data){
