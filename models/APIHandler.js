@@ -21,8 +21,7 @@ module.exports = function(command) {
         console.log('chunk logged: ' + chunk);
       });
       
-      return res.on('end', function(){
-        console.log(fullResponce);
+      return res.on('end', function() {
         return parser.parseString(fullResponse);
       });
     });
