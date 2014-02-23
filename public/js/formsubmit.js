@@ -27,4 +27,15 @@ function formajax(event)
   
   });
   }
+ else{
+  clearOverlays();
+ }
+ }
+}
+
+function clearOverlays() {
+  for (var i = 0; i < markersArray.length; i++ ) {
+    markersArray[i].setMap(null);
+  }
+  markersArray.length = 0;
 }
