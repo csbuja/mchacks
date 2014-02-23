@@ -252,19 +252,19 @@ function gatherData(data)
 	);
 	$('.result').append( 	
 		$('<div />', { 
-			"class": 'start',
+			"class": 'end',
 			text : arriving_add
 		})
 	);
 	$('.result').append( 	
 		$('<div />', { 
-			"class": 'start',
+			"class": 'total-dist',
 			text : totalDist
 		})
 	);
 	$('.result').append( 	
 		$('<div />', { 
-			"class": 'start',
+			"class": 'length',
 			text : duration
 		})
 	);
