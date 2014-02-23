@@ -1,8 +1,6 @@
-var masterAPI = require('APIHandler.js');
+var apiData = require('APIHandler.js')('routeList');
 
-function getRouteList() {
-  var masterData = getAPIData('routeList');
-  
-  console.log(masterData);
-  return masterData;
+module.export = function(options) {
+  //This needs more actual functionality
+  return apiData;
 }
