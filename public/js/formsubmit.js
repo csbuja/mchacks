@@ -19,7 +19,7 @@ function formajax(event)
     success:function(response)
     {
     //temperary
-    console.log(response);
+    dropPin(45.5, -73.7, 45.2, -74);
     },
     error: function(){
       alert("There's an error in your function");
@@ -39,3 +39,34 @@ function clearOverlays() {
   }
   markersArray.length = 0;
 }
+
+function dropPin(lat, lng, lat2, lng2){
+
+	var position = new google.maps.LatLng( lat, lng);
+	var position2 = new google.maps.LatLng( lat2, lng2);
+
+	markers.push( new google.maps.Marker({
+				position: position,
+				map: map,
+				draggable: false,
+				animation: google.maps.Animation.DROP
+			}));
+	markers.push( new google.maps.Marker({
+				position: position2,
+				map: map,
+				draggable: false,
+				animation: google.maps.Animation.DROP
+			}));
+
+
+	var request = {
+    	origin:position,
+    	destination:position2,
+    	travelMode: google.maps.TravelMode.TRANSIT
+  	};
+  	directionsService.route(request, function(response, status) {
+    	if (status == google.maps.DirectionsStatus.OK) {
+      		directionsDisplay.setDirections(response);
+    	}
+  	});
+};
