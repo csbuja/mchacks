@@ -85,20 +85,24 @@ function geocodeAddress(op){
     			console.log("- destination geocode was not successful -");
     		}
     	}
-    });
 
-	console.log("t" + (latLng1 != null));
-	console.log("t" + (latLng2 != null));
-	if(latLng1 != null && latLng2 != null)
-	{
-		console.log("drop pins");
-		$('.result').remove();
-		dropPin(latLng1, latLng2);
-		performSearch( function(data){
+		console.log("t" + (latLng1 != null));
+		console.log("t" + (latLng2 != null));
+		if(latLng1 != null && latLng2 != null)
+		{
+			console.log("drop pins");
+			$('.result').remove();
+			dropPin(latLng1, latLng2);
+			performSearch( function(data){
 			// CREATE CHILD OBJECTS FOR RESULTS_PG;
 
-		});
-	}
+			});
+		}
+
+
+
+    });
+
 }
 // ========================================================================================
 // ========================================================================================
