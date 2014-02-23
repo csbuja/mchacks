@@ -23,7 +23,7 @@ module.exports = {
       });
       
       var extractedData = "";
-      return parser.parseString(xml, function(err,result){
+      return parser.parseString(fullResponse, function(err,result){
         //Extract the value from the data element
         extractedData = result['data'];
         console.log(extractedData);
