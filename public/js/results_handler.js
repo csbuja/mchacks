@@ -159,20 +159,32 @@ function initializeMap() {
 
 function dropPin(pos1, pos2){
 
+	var icon = new google.maps.MarkerImage(
+            '../img/mapBegin.png', //url
+            new google.maps.Size(width, height), //size
+            new google.maps.Point(0,0), //origin
+            new google.maps.Point(anchor_left, anchor_top) //anchor 
+    );
 	markers.push( new google.maps.Marker({
 			position: pos1,
 			map: map,
 			draggable: false,
 			animation: google.maps.Animation.DROP,
-			icon: '../img/mapBegin.png'
+			icon: icon
 		}));
 
+	icon = new google.maps.MarkerImage(
+            '../img/mapEnd.png', //url
+            new google.maps.Size(width, height), //size
+            new google.maps.Point(0,0), //origin
+            new google.maps.Point(anchor_left, anchor_top) //anchor 
+    );
 	markers.push( new google.maps.Marker({
 			position: pos2,
 			map: map,
 			draggable: false,
 			animation: google.maps.Animation.DROP,
-			icon: '../img/mapEnd.png'
+			icon: icon
 		}));
 
 	// var request = {
