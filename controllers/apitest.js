@@ -27,10 +27,10 @@ exports.index = function(req, res) {
         
     response.on('data', function (chunk) {
       fullResponse += chunk;
-      console.log(chunk);
     });
 
     parser.parseString(fullResponse);
+    console.log(fullResponse);
   });
   
   res.render('apitest', {
