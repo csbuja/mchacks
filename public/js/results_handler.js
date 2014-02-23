@@ -208,7 +208,8 @@ function gatherData(data)
 
 
 	markers.push( new google.maps.Marker({
-			position: data.legs[i].start_location,
+			position: new google.maps.LatLng(data.legs[i].start_location.d, data.legs[i].start_location.e),
+			map: map,
 			map: map,
 			draggable: false,
 			animation: google.maps.Animation.DROP,
@@ -216,7 +217,7 @@ function gatherData(data)
 		}));
 
 	markers.push( new google.maps.Marker({
-			position: data.legs[i].end_location,
+			position: new google.maps.LatLng(data.legs[i].end_location.d, data.legs[i].end_location.e),
 			map: map,
 			draggable: false,
 			animation: google.maps.Animation.DROP,
