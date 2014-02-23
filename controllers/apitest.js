@@ -10,6 +10,4 @@ exports.index = function(req, res) {
     title: 'API Test',
     data: routeList
   });
-  console.log('route list');
-  console.log(routeList);
 };
