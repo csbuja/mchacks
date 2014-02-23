@@ -1,6 +1,6 @@
 var map; // map object
-var directionsDisplay;
-var directionsService;
+var directionsDisplay = new google.maps.DirectionsRenderer();
+var directionsService = new google.maps.DirectionsService();
 var markers = []; // markers that are on the map.
 var clicked = "";
 
@@ -55,8 +55,6 @@ function initializeMap() {
       mapOptions);
 
 	// sets up the directions to display on the map
-	directionsService = new google.maps.DirectionsService();
-	directionsDisplay = new google.maps.DirectionsRenderer();
 	directionsDisplay.setMap(map);
 };
 
@@ -65,6 +63,8 @@ function dropPin(lat, lng, lat2, lng2){
 	console.log("drop pins");
 	var position = new google.maps.LatLng( lat, lng);
 	var position2 = new google.maps.LatLng( lat2, lng2);
+	console.log( position );
+	console.log( position2 );
 
 	markers.push( new google.maps.Marker({
 				position: position,
@@ -78,14 +78,17 @@ function dropPin(lat, lng, lat2, lng2){
 				draggable: false,
 				animation: google.maps.Animation.DROP
 			}));
+	console.log( markers.length );
+
+
 	var request = {
-      origin:position,
-      destination:position2,
-      travelMode: google.maps.TravelMode.TRANSIT
+    	origin:position,
+    	destination:position2,
+    	travelMode: google.maps.TravelMode.TRANSIT
   	};
   	directionsService.route(request, function(response, status) {
     	if (status == google.maps.DirectionsStatus.OK) {
       		directionsDisplay.setDirections(response);
     	}
-  });
-}
+  	});
+};
