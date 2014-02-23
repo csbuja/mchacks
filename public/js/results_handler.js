@@ -13,7 +13,8 @@ $(document).ready(function () {
 
 	initializeMap();
 
-	$('#submit').click( function(){
+	$('#header-form').submit( function(e){
+		e.preventDefault();
 		console.log("submit button");
 		$('.result').remove();
 		directionsDisplay.setMap(null);
