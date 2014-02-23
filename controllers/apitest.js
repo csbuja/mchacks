@@ -10,6 +10,12 @@ exports.index = function(req, res) {
   //get the data from the api
   
   //get xml
+  var options = {
+      host: 'webservices.nextbus.com',
+      port: 80,
+      path: '/service/publicXMLFeed?a=stl&command='+command,
+      method: 'GET'
+    };
   var request = http.request(options, function(err,response) {
     response.setEncoding('utf8');
    
