@@ -8,7 +8,8 @@ var routeList = require('../models/RouteList');
 exports.index = function(req, res) {
   res.render('apitest', {
     title: 'API Test',
-    data: routeList
+    data: routeList.getData()
   });
-  console.log(routeList);
+  console.log('route list');
+  console.log(routeList.getData());
 };
