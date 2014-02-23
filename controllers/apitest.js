@@ -10,4 +10,5 @@ exports.index = function(req, res) {
     title: 'API Test',
     data: data
   });
+  console.log(data);
 };
