@@ -135,7 +135,7 @@ function initializeMap() {
 
 	var mapOptions = {
     	disableDefaultUI: true,
-    	zoom: 8,
+    	zoom: 11,
 		center: new google.maps.LatLng(45.5833, -73.7500)
 	};
   	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
