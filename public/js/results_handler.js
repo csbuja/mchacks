@@ -19,14 +19,9 @@ $(document).ready(function () {
 	});
 
 
-	// a result has been clicked.
-	$('.result').click( function(){
-
-		console.log('click click');
-		clicked = $(this).id;
-	});	
 
 	$('#clear').click( function(){
+		console.log("clear button");
 		directionDisplay.setMap(null);
 		clearOverlays();
 		map.clear();
@@ -162,22 +157,6 @@ function initializeMap() {
 
 function dropPin(pos1, pos2){
 
-	markers.push( new google.maps.Marker({
-			position: pos1,
-			map: map,
-			draggable: false,
-			animation: google.maps.Animation.DROP,
-			icon: '../img/mapBegin.png'
-		}));
-
-	markers.push( new google.maps.Marker({
-			position: pos2,
-			map: map,
-			draggable: false,
-			animation: google.maps.Animation.DROP,
-			icon: '../img/mapEnd.png'
-		}));
-
 	var request = {
    		origin:pos1,
     	destination:pos2,
@@ -226,6 +205,23 @@ function gatherData(data)
 
 		totalDist += parseFloat(data.legs[i].distance.text);
 	}
+
+
+	markers.push( new google.maps.Marker({
+			position: data.legs[i].start_location,
+			map: map,
+			draggable: false,
+			animation: google.maps.Animation.DROP,
+			icon: '../img/mapBegin.png'
+		}));
+
+	markers.push( new google.maps.Marker({
+			position: data.legs[i].end_location,
+			map: map,
+			draggable: false,
+			animation: google.maps.Animation.DROP,
+			icon: '../img/mapEnd.png'
+		}));
 
 	// difference in time.
 
