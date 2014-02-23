@@ -79,6 +79,7 @@ function dropPin(lat, lng, lat2, lng2){
 				animation: google.maps.Animation.DROP
 			}));
 	console.log( markers.length );
+	console.log( map );
 
 
 	var request = {
