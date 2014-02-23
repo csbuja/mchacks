@@ -136,7 +136,7 @@ function initializeMap() {
 	directionsDisplay.setMap(map);
 
 
-	var old = document.getElementById('results_pg');
+	var old = $('.results_pg');
 	var newObj = document.createElement('div');
 	newObj.setAttribute('id', 'result-head');
 	old.append(newObj);
