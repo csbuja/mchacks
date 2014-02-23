@@ -4,13 +4,12 @@
 */
 exports.index = function(req, res) {
   //get the data from the api
-  console.log('export...'+command);
   var parser = new xml2js.Parser();
   var extractedData = "";
   var options = {
     host: 'webservices.nextbus.com',
     port: 80,
-    path: '/service/publicXMLFeed?a=stl&command='+command,
+    path: '/service/publicXMLFeed?a=stl&command=routeList,
     method: 'GET'
   };
   var req = http.request(options, function(res) {
