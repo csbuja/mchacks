@@ -167,7 +167,11 @@ function dropPin(pos1, pos2){
     	{
     		directionsDisplay.setMap(map);
    			directionsDisplay.setDirections(response);
+   			var leg = response.routes[ 0 ].legs[ 0 ];
+        	makeMarker( leg.start_location, '../img/mapBegin.png', "title" );
+        	makeMarker( leg.end_location, '../img/mapEnd.png', 'title' );
    			gatherData( response['routes'][0] );
+
     	}
   	});
 };
