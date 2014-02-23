@@ -6,10 +6,7 @@ var http = require('http');
  *      predictionsForMultiStops, schedule, messages,
  *      vehicleLocations, 
  */
-module.exports = function(options) {
-  var app = options.app; //not actually used
-  var command = options.param2;
-  console.log(options);
+module.exports = function(comman) {
   var options = {
     host: 'webservices.nextbus.com',
     path: '/service/publicXMLFeed?a=stl&command=' + command
