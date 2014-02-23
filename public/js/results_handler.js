@@ -107,7 +107,7 @@ function geocodeAddress(op){
 
 function performSearch(cb){
 	var data;
-	String s = $('.results_pg').children().length.toString();
+	//String s = $('.results_pg').children().length.toString();
 	// $('.results_pg').append( $('.result #'+s.toString() ) );
 
 	cb(data); // CREATE CHILD OBJECTS.
