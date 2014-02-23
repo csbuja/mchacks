@@ -225,12 +225,60 @@ function gatherData(data)
 		}));
 
 	// difference in time.
+	
 
-	console.log(totalDist.toString() + " km");
-	console.log(departing_add);
-	console.log(arriving_add);
-	console.log(departing_time);
-	console.log(arriving_time);
+	$('.results_pg').append($('<div />', { "class": 'results-head' }); );
+	$('.results-head').append( 	
+		$('<div />', { 
+			"class": 'start',
+			text : "Starting from:"
+		});
+	);
+	$('.results-head').append( 	
+		$('<div />', { 
+			"class": 'start',
+			text : "Ending at:"
+		});
+	);
+	$('.results-head').append( 	
+		$('<div />', { 
+			"class": 'start',
+			text : "Distance:"
+		});
+	);
+	$('.results-head').append( 	
+		$('<div />', { 
+			"class": 'start',
+			text : "Duration:"
+		});
+	);
+
+	$('.results_pg').append($('<div />', { "class": 'result' }); );
+	$('.result').append( 	
+		$('<div />', { 
+			"class": 'start',
+			text : departing_add
+		});
+	);
+	$('.result').append( 	
+		$('<div />', { 
+			"class": 'start',
+			text : arriving_add
+		});
+	);
+	$('.result').append( 	
+		$('<div />', { 
+			"class": 'start',
+			text : totalDist
+		});
+	);
+	$('.result').append( 	
+		$('<div />', { 
+			"class": 'start',
+			text : duration
+		});
+	);
+)
 
 }
 
