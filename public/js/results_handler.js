@@ -227,32 +227,6 @@ function gatherData(data)
 	// difference in time.
 
 
-	$('.results_pg').append($('<div />', { "class": 'results' }) );
-	$('.results-head').append( 	
-		$('<div />', { 
-			"class": 'start',
-			text : "Starting from:"
-		})
-	);
-	$('.results-head').append( 	
-		$('<div />', { 
-			"class": 'start',
-			text : "Ending at:"
-		})
-	);
-	$('.results-head').append( 	
-		$('<div />', { 
-			"class": 'start',
-			text : "Distance:"
-		})
-	);
-	$('.results-head').append( 	
-		$('<div />', { 
-			"class": 'start',
-			text : "Duration:"
-		})
-	);
-
 	$('.results_pg').append($('<div />', { "class": 'result' }) );
 	$('.result').append( 	
 		$('<div />', { 
