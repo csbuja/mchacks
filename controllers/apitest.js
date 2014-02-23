@@ -43,7 +43,7 @@ var data = (function(command) {
       
       return jsonObj;
   });
-})('routeDetails');
+})('routeList');
 
 exports.index = function(req, res) {
   res.render('apitest', {
