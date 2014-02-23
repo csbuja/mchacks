@@ -4,7 +4,7 @@ var http = require('http'),
 
 ////////// code to get xml from url
 exports.model = function(command){
-  var getData = function(command) {
+  function getData(command) {
     var options = {
       host: 'webservices.nextbus.com',
       port: 80,
