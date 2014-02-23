@@ -208,13 +208,24 @@ function gatherData(data)
 	for(var i = 0; i < data.legs.length; i++)
 	{
 		console.log(i);
-		if(i == 0);
-		else if(i == data.length-1);
+		if(i == 0)
+		{
+			// departing address
+			// departing time
+		}
+		else if(i == data.length-1)
+		{
+			// arriving address
+			// arriving time
 
-		totalDist += data.legs[i].distance.text.parseFloat();
+		}
+
+		totalDist += parseFloat(data.legs[i].distance.text);
 	}
 
-	console.log(totalDist);
+	// difference in time.
+
+	console.log(totalDist.toString() + " Miles");
 
 }
 
