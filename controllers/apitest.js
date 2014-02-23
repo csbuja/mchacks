@@ -2,7 +2,8 @@
 * GET /
 * Home page.
 */
-var xml2js = require('xml2js');
+var xml2js = require('xml2js'),
+  http = require('http');
 
 exports.index = function(req, res) {
   //get the data from the api
