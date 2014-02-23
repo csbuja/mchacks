@@ -27,7 +27,7 @@ module.exports = {
         //Extract the value from the data element
         extractedData = result['data'];
         console.log(extractedData);
-        return extractedData;
+        return {};//extractedData;
       });
     });
   }
