@@ -166,15 +166,28 @@ body {
   border-color: #aaaaaa;
 }
 
-.result > div {
-  width: 33%;
+.result-head {
+  font-weight: bold;
+}
+
+.result > div,
+.result-head > div {
   display: inline-block;
   padding: 1% 2%;
   color: #555555;
 }
 
-.result + .result {
+.results .result {
   border-top: dotted 1px #cccccc;
+}
+.results .start,
+.results .end {
+  width: 35%;
+}
+
+.results .length,
+.results .total-dist {
+  width: 15%;
 }
 
 .results_pg {
