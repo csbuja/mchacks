@@ -59,21 +59,17 @@ function geocodeAddress(op){
 	if(op == true) address = document.getElementById('position').value;
 	else address = document.getElementById('destination').value;
 
-	console.log(address);
 	geocoder.geocode( { 'address': address}, function(results, status) {
 
 		// GEOCODE SUCCESSFUL
     	if (status == google.maps.GeocoderStatus.OK)
     	{
-    		console.log(op);
-    		console.log(results[0].geometry.location);
 
     		if(op == true) latLng1 = results[0].geometry.location;
     		else latLng2 = results[0].geometry.location;
     	}
     	else 
     	{
-    		alert("Geocode was not successful for the following reason: " + status);
     		if(op == true)
    			{
    				latLng1 = null;
@@ -86,11 +82,9 @@ function geocodeAddress(op){
     		}
     	}
 
-		console.log("t" + (latLng1 != null));
-		console.log("t" + (latLng2 != null));
 		if(latLng1 != null && latLng2 != null)
 		{
-			console.log("drop pins");
+			map.clearOverlays();
 			$('.result').remove();
 			dropPin(latLng1, latLng2);
 			performSearch( function(data){
