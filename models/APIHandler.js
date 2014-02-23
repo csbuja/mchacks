@@ -10,7 +10,7 @@ module.exports = function(command) {
     path: '/service/publicXMLFeed?a=stl&command='+command,
     method: 'GET'
   };
-  var req = http.request(options, function(res) {
+  return http.request(options, function(res) {
     res.setEncoding('utf8');
     
     var fullResponse = "";
@@ -24,9 +24,6 @@ module.exports = function(command) {
       console.log(fullResponce);
       return parser.parseString(fullResponse);
     });
-  });
-  req.on('error', function(e) {
-    console.log('problem with request: ' + e.message);
   });
   
   //code to parse xml
