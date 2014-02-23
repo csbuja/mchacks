@@ -22,7 +22,9 @@ module.exports = function(command) {
       });
       
       return res.on('end', function() {
-        return parser.parseString(fullResponse);
+        var ret = parser.parseString(fullResponse);
+        console.log('returning...'+ret);
+        return ret;
       });
     });
     
