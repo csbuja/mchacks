@@ -1,4 +1,5 @@
-var map;
+var map; // map object
+var markers = []; // markers that are on the map.
 var clicked = "";
 
 $(document).ready(function () {
@@ -24,6 +25,10 @@ $(document).ready(function () {
 
 		console.log('click click');
 		clicked = $(this).id;
+
+		dropPin(45.5, 73.7);
+		dropPin(45.2, 74);
+
 	});
 
 });
@@ -45,4 +50,15 @@ function initializeMap() {
   };
   return new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
+}
+
+function dropPin(lat, lng){
+	var position = new google.maps.LatLng( lat, lng);
+
+	markers.push( new google.maps.Marker({
+				position: pos,
+				map: this.map,
+				draggable: false,
+				animation: google.maps.Animation.DROP
+			}));
 }
