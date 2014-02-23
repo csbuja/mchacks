@@ -28,7 +28,7 @@ $(document).ready(function () {
 		console.log('click click');
 		clicked = $(this).id;
 
-		dropPin(45.5, 73.7, 45.2, 74);
+		dropPin(45.5, -73.7, 45.2, -74);
 
 	});
 
@@ -51,8 +51,7 @@ function initializeMap() {
     	zoom: 8,
 		center: new google.maps.LatLng(45.5833, -73.7500)
 	};
-  	map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
+  	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
 	// sets up the directions to display on the map
 	directionsDisplay.setMap(map);
@@ -60,11 +59,8 @@ function initializeMap() {
 
 function dropPin(lat, lng, lat2, lng2){
 
-	console.log("drop pins");
 	var position = new google.maps.LatLng( lat, lng);
 	var position2 = new google.maps.LatLng( lat2, lng2);
-	console.log( position );
-	console.log( position2 );
 
 	markers.push( new google.maps.Marker({
 				position: position,
@@ -78,8 +74,6 @@ function dropPin(lat, lng, lat2, lng2){
 				draggable: false,
 				animation: google.maps.Animation.DROP
 			}));
-	console.log( markers.length );
-	console.log( map );
 
 
 	var request = {
