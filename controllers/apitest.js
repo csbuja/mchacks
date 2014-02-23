@@ -11,5 +11,5 @@ exports.index = function(req, res) {
     data: routeList.model
   });
   console.log('route list');
-  console.log(routeList.model.getData());
+  console.log(routeList.getData());
 };
