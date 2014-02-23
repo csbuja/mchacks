@@ -87,8 +87,8 @@ function geocodeAddress(op){
     	}
     });
 
-	console("t" + (latLng1 != null).toString());
-	console("t" + (latLng2 != null).toString());
+	console.log("t" + (latLng1 != null));
+	console.log("t" + (latLng2 != null));
 	if(latLng1 != null && latLng2 != null)
 	{
 		console.log("drop pins");
