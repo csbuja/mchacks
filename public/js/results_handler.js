@@ -204,20 +204,25 @@ function clearOverlays() {
 function gatherData(data)
 {
 	console.log(data);
+
 	var totalDist = 0.0;
+	var arriving_time;
+	var departing_time;
+	var departing_add;
+	var arriving_add;
+
 	for(var i = 0; i < data.legs.length; i++)
 	{
 		console.log(i);
 		if(i == 0)
 		{
-			// departing address
-			// departing time
+			departing_time = data.legs[i].departure_time.text;
+			departing_add = data.legs[i].start_address;
 		}
 		else if(i == data.length-1)
 		{
-			// arriving address
-			// arriving time
-
+			arriving_time = data.legs[i].arriving_time.text;
+			arriving_add = data.legs[i].end_address;
 		}
 
 		totalDist += parseFloat(data.legs[i].distance.text);
@@ -225,7 +230,11 @@ function gatherData(data)
 
 	// difference in time.
 
-	console.log(totalDist.toString() + " Miles");
+	console.log(totalDist.toString() + " km");
+	console.log(departing_add);
+	console.log(arriving_add);
+	console.log(departing_time);
+	console.log(arriving_time);
 
 }
 
