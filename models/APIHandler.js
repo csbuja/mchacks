@@ -18,6 +18,8 @@ module.exports = function(options) {
   
   return http.get(options).on('response', function(response) {
     var xml = new XmlStream(response, 'utf8');
-    return libxmljs.parseXmlString(xml);
+    console.log(xml);
+    //return libxmljs.parseXmlString(xml);
+    return {};
   });
 }
