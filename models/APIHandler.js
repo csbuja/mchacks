@@ -3,8 +3,7 @@ var http = require('http'),
   xml2js = require('xml2js');
 
 ////////// code to get xml from url
-module.exports = {
-  get: function(command) {
+function(command) {
     console.log('export...'+command);
     var options = {
       host: 'webservices.nextbus.com',
@@ -24,7 +23,7 @@ module.exports = {
       
       return res.on('end', function(){
         console.log(fullResponce);
-        return parser.parseString(fullResponse);
+        module.export = parser.parseString(fullResponse);
       });
     });
     
@@ -39,4 +38,3 @@ module.exports = {
         return jsonObj;
     });
   }
-}
