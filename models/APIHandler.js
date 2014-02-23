@@ -23,6 +23,7 @@ getData = function(command) {
     });
     
     res.on('end', function(){
+      console.log(fullResponce);
       return parser.parseString(fullResponse);
     });
   });
