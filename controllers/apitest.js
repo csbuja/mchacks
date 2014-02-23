@@ -21,6 +21,7 @@ exports.index = function(req, res) {
     
     res.on('data', function (chunk) {
       fullResponse += chunk;
+      console.log(chunk);
     });
 
     parser.parseString(fullResponse, function(err,result){
