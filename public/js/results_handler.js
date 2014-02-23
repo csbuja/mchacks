@@ -153,17 +153,34 @@ function initializeMap() {
 
 function dropPin(pos1, pos2){
 
+	// Resize icon and add it to map at begin point.
+	var icon = {
+    	url: '../img/mapBegin.png', // url
+    	size: new google.maps.Size(width, height), // size
+    	origin: new google.maps.Point(0,0), // origin
+    	anchor: new google.maps.Point(anchor_left, anchor_top) // anchor 
+ 	};
 	markers.push( new google.maps.Marker({
 			position: pos1,
 			map: map,
 			draggable: false,
 			animation: google.maps.Animation.DROP
+			icon: icon
 		}));
+
+	// Resize icon and add it to map at end point.
+	icon = {
+    	url: '../img/mapEnd.png', // url
+    	size: new google.maps.Size(width, height), // size
+    	origin: new google.maps.Point(0,0), // origin
+    	anchor: new google.maps.Point(anchor_left, anchor_top) // anchor 
+ 	};
 	markers.push( new google.maps.Marker({
 			position: pos2,
 			map: map,
 			draggable: false,
 			animation: google.maps.Animation.DROP
+			icon: iconBase + '../img/mapEnd.png'
 		}));
 
 
