@@ -16,6 +16,9 @@ module.exports = function(options) {
   };
   
   return http.get(options).on('response', function(response) {
-    return libxmljs.parseXmlFile(response);
+    return response.on("data", function(chunk) {
+      console.log("BODY: " + chunk);
+      return libxmljs.parseXmlString(response);
+    });
   });
 }
