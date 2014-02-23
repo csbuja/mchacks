@@ -227,7 +227,9 @@ function gatherData(data)
 		if (isKm) {
 			totalDist = totalDist / .621371;
 		}
-		totalDist += 'mi';
+		//format with only one decimal place
+		totalDist = parseFloat(Math.round(totalDist * 10) / 10).toFixed(1);
+		totalDist += ' mi';
 	}
 
 
