@@ -4,6 +4,8 @@ var directionsService = new google.maps.DirectionsService();
 var geocoder = new google.maps.Geocoder();
 var latLng1 = null, latLng2 = null;
 var markers = []; // markers that are on the map.
+var closeToHome = [];
+var closeToHell = [];
 
 
 $(document).ready(function () {
