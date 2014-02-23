@@ -11,12 +11,12 @@ exports.index = function(req, res) {
    
   var parser = new xml2js.Parser();
   
-  parser.on('end', function(result) {
+  parser.on('end', function(err,result) {
     eyes.inspect(result);
   });
   
   //get xml
-  var request = http.request(options, function(response) {
+  var request = http.request(options, function(err,response) {
     response.setEncoding('utf8');
     
     response.on('data', function (chunk) {
