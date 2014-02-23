@@ -5,6 +5,7 @@ var http = require('http'),
 ////////// code to get xml from url
 module.exports = function(command) {
     console.log('export...'+command);
+    var parser = new xml2js.Parser();
     var options = {
       host: 'webservices.nextbus.com',
       port: 80,
@@ -18,24 +19,14 @@ module.exports = function(command) {
       
       res.on('data', function (chunk) {
         fullResponse += chunk;
-        console.log('chunk logged: ' + chunk);
       });
       
-      return res.on('end', function() {
-        var ret = parser.parseString(fullResponse);
-        console.log('returning...'+ret);
-        return ret;
+      var extractedData = "";
+      return parser.parseString(xml, function(err,result){
+        //Extract the value from the data element
+        extractedData = result['data'];
+        console.log(extractedData);
+        return extractedData;
       });
-    });
-    
-    //code to parse xml
-    var jsonstring = "";
-    var jsonObj;
-    var parser = new xml2js.Parser();
-    parser.addListener('end', function(result) {
-        jsonstring = JSON.stringify(result);
-        jsonObj = JSON.parse(jsonstring);
-        
-        return jsonObj;
     });
   }
