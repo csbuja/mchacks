@@ -2,7 +2,7 @@
 * GET /
 * Home page.
 */
-var fs = require('fs'),
+var http = require('http'),
     eyes = require('eyes'),
     xml2js = require('xml2js');
 
