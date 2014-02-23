@@ -9,7 +9,7 @@ module.exports = {
   var options = {
       host: 'webservices.nextbus.com',
       port: 80,
-      path: '/service/publicXMLFeed?a=stl&command=routeList',
+      path: '/service/publicXMLFeed?a=stl&command='+command,
       method: 'GET'
     };
   var fullResponse = '';
