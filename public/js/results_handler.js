@@ -1,48 +1,115 @@
 var map; // map object
 var directionsDisplay = new google.maps.DirectionsRenderer();
 var directionsService = new google.maps.DirectionsService();
+var geocoder = new google.maps.Geocoder();
+var latLng1 = null, latLng2 = null;
 var markers = []; // markers that are on the map.
-var clicked = "";
+
 
 $(document).ready(function () {
 
 	initializeMap();
 
-	// FROM should automatically be set to current location (or a location chosen by user)
-	// DESTINATION triggers a search and loads results into the results_pg.
-	// on search, fill the results_pg with results.
+	// the destination field has been changed.
 	$('#destination').change( function(){
 
-		console.log('perform search');
-		
-		$('.result').remove();
-
-		performSearch();
+		console.log( $('#destination').text() );
+		geocodeAddress(false);
 
 	});
 
 
-	// when a result is clicked, expand to show hidden information.
+	// the position field has been changed.
+	$('#position').change( function(){
+
+		console.log( $('#position').text() );
+		geocodeAddress(true);
+
+	});
+
+
+	// a result has been clicked.
 	$('.result').click( function(){
 
 		console.log('click click');
 		clicked = $(this).id;
-
-		dropPin(45.5, -73.7, 45.2, -74);
-
 	});
 
 });
 
+// ========================================================================================
+// ========================================================================================
+
+
+
+
+// ========================================================================================
+// helper function to geocode.
+
+function geocodeAddress(op){
+	// op == true     --> position
+	// op == false    --> destination
+
+	var address;
+	if(op == true) address = document.getElementById('position').text;
+	else address = document.getElementById('destination').text;
+
+	geocoder.geocode( { 'address': address}, function(results, status) {
+
+		// GEOCODE SUCCESSFUL
+    	if (status == google.maps.GeocoderStatus.OK)
+    	{
+    		if(op == true) latLng1 = results[0].geometry.location;
+    		else latLng2 = results[0].geometry.location;
+    	}
+    	else 
+    	{
+    		if(op == true)
+   			{
+   				latLng1 = null;
+    			console.log("- position geocode was not successful -");
+    		}
+    		else
+    		{
+   				latLng2 = null;
+    			console.log("- destination geocode was not successful -");
+    		}
+    	}
+    });
+
+	if(latLng1 != null && latLng2 != null)
+	{
+		$('.result').remove();
+		dropPin(latLng1, latLng2);
+		performSearch();
+	}
+}
+// ========================================================================================
+// ========================================================================================
+
+
+
+
+
+
+
+
+// ========================================================================================
+// helper function to perform search.
 
 function performSearch(){
-	//String s = $('.results_pg').children().length.toString();
+	String s = $('.results_pg').children().length.toString();
 	// $('.results_pg').append( $('.result #'+s.toString() ) );
+
 };
+// ========================================================================================
+// ========================================================================================
 
 
 
+// ========================================================================================
 // builds the map object
+
 function initializeMap() {
 	console.log("init");
 
@@ -56,34 +123,52 @@ function initializeMap() {
 	// sets up the directions to display on the map
 	directionsDisplay.setMap(map);
 };
+// ========================================================================================
+// ========================================================================================
 
-function dropPin(lat, lng, lat2, lng2){
 
-	var position = new google.maps.LatLng( lat, lng);
-	var position2 = new google.maps.LatLng( lat2, lng2);
+
+
+
+
+
+
+
+// ========================================================================================
+// drops pins at the two points.
+
+function dropPin(pos1, pos2){
 
 	markers.push( new google.maps.Marker({
-				position: position,
-				map: map,
-				draggable: false,
-				animation: google.maps.Animation.DROP
-			}));
+			position: pos1,
+			map: map,
+			draggable: false,
+			animation: google.maps.Animation.DROP
+		}));
 	markers.push( new google.maps.Marker({
-				position: position2,
-				map: map,
-				draggable: false,
-				animation: google.maps.Animation.DROP
-			}));
+			position: pos2,
+			map: map,
+			draggable: false,
+			animation: google.maps.Animation.DROP
+		}));
 
 
-	var request = {
-    	origin:position,
-    	destination:position2,
-    	travelMode: google.maps.TravelMode.TRANSIT
-  	};
-  	directionsService.route(request, function(response, status) {
-    	if (status == google.maps.DirectionsStatus.OK) {
-      		directionsDisplay.setDirections(response);
-    	}
-  	});
+	// var request = {
+ //   		origin:position,
+ //    	destination:position2,
+ //    	travelMode: google.maps.TravelMode.TRANSIT
+ //  	};
+ //  	directionsService.route(request, function(response, status){
+ //    	if (status == google.maps.DirectionsStatus.OK)
+ //    	{
+ //   			directionsDisplay.setDirections(response);
+ //    	}
+ //  	});
 };
+// ========================================================================================
+// ========================================================================================
+
+
+
+
+
