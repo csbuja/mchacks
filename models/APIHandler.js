@@ -19,6 +19,7 @@ module.exports = function(command) {
       body += chunk;
     });
     return res.on('end', function() {
+      console.log(body);
       return libxmljs.parseXmlString(body);
     });
   });
