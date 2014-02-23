@@ -74,8 +74,6 @@ function geocodeAddress(){
     			{
     				latLng2 = results[0].geometry.location;
     				dropPin(latLng1, latLng2);
-    				//show results
-				$('.results_pg').fadeIn();
     			}
     			else 
     			{
@@ -216,6 +214,12 @@ function gatherData(data)
 		d = d.replace(',', '');
 		console.log(d);
 		totalDist += parseFloat(d);
+	}
+	
+	//if we have any legs on the journey
+	if (data.legs.length > 0) {
+    		//then results for the journey should be visible
+		$('.results_pg').fadeIn();
 	}
 
 
