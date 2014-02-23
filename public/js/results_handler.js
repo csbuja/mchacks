@@ -27,7 +27,7 @@ $(document).ready(function () {
 
 $('#clear').click( function(){
 		console.log("clear button");
-		directionDisplay.setMap(null);
+		directionsDisplay.setMap(null);
 		clearOverlays();
 		map.clear();
 	});
