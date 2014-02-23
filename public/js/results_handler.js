@@ -13,21 +13,9 @@ $(document).ready(function () {
 
 	initializeMap();
 
-	// the destination field has been changed.
-	$('#destination').change( function(){
-
-		console.log( $('#destination').text() );
-		geocodeAddress(false);
-
-	});
-
-
-	// the position field has been changed.
-	$('#position').change( function(){
-
-		console.log( $('#position').text() );
+	$('#submit').click( function(){
 		geocodeAddress(true);
-
+		geocodeAddress(false);
 	});
 
 
@@ -37,6 +25,11 @@ $(document).ready(function () {
 		console.log('click click');
 		clicked = $(this).id;
 	});	
+
+	$('#clear').click( function(){
+
+		clearOverlays();
+	});
 
 });
 
@@ -218,7 +211,7 @@ function gatherData(data)
 		{
 			departing_time = data.legs[i].departure_time['text'];
 			departing_add = data.legs[i].start_address;
-			arriving_time = data.legs[i].arriving_time['text'];
+			arriving_time = data.legs[i].arrival_time['text'];
 			arriving_add = data.legs[i].end_address;
 			duration = data.legs[i].duration['text'];
 		}
