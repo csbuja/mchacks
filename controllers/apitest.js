@@ -2,7 +2,7 @@
 * GET /
 * Home page.
 */
-var routeList = require('../modules/routeList.xhtml');
+var routeList = require('../modules/RouteList');
 
 exports.index = function(req, res) {
   res.render('apitest', {
