@@ -2,11 +2,11 @@
 * GET /
 * Home page.
 */
-var routeList = require('../models/RouteList');
+var routeList = require('../models/APIHandler');
 
 exports.index = function(req, res) {
   res.render('apitest', {
     title: 'API Test',
-    data: routeList
+    data: routeList.get('routeList')
   });
 };
