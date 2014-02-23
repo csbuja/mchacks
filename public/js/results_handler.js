@@ -19,9 +19,7 @@ $(document).ready(function () {
 		geocodeAddress(false);
 	});
 
-	$('#clear').click( function(){
-		clear();
-	});
+	$('#clear').click( function(){ clear(); });
 
 
 });
