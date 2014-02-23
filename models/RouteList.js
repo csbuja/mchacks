@@ -1,1 +1,1 @@
-module.exports = require('../models/APIHandler')('routeList');
+module.exports = require('../models/APIHandler').get('routeList');
