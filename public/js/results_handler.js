@@ -203,13 +203,13 @@ function clearOverlays() {
 
 function gatherData(data)
 {
-	var totalDist = 0;
+	float totalDist = 0.0f;
 	for(var i = 0; i < data.length; i++)
 	{
 		if(i == 0);
 		else if(i == data.length-1);
 
-		totalDist += data[i].distance.text.parseInt();
+		totalDist += data[i].distance.text.parseFloat();
 	}
 
 	console.log(totalDist);
