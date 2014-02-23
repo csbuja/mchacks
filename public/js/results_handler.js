@@ -27,7 +27,7 @@ $(document).ready(function () {
 	});	
 
 	$('#clear').click( function(){
-
+		directionDisplay.setMap(null);
 		clearOverlays();
 	});
 
@@ -128,10 +128,17 @@ function performSearch(cb){
 function initializeMap() {
 	console.log("init");
 
+	var center;
+	if (navigator.geolocation) {
+    	navigator.geolocation.getCurrentPosition(function (position) {
+    		center = new google.maps.LatLng(position.coords.lat, position.coords.lng);
+    	});
+    }
+
 	var mapOptions = {
     	disableDefaultUI: true,
     	zoom: 11,
-		center: new google.maps.LatLng(45.5833, -73.7500)
+		center: center
 	};
   	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
