@@ -162,7 +162,7 @@ function dropPin(pos1, pos2){
 	var icon = new google.maps.MarkerImage(
             '../img/mapBegin.png', //url
             new google.maps.Size(width, height), //size
-            new google.maps.Point(0,0), //origin
+            new google.maps.Point(50,100), //origin
             new google.maps.Point(anchor_left, anchor_top) //anchor 
     );
 	markers.push( new google.maps.Marker({
@@ -176,7 +176,7 @@ function dropPin(pos1, pos2){
 	icon = new google.maps.MarkerImage(
             '../img/mapEnd.png', //url
             new google.maps.Size(width, height), //size
-            new google.maps.Point(0,0), //origin
+            new google.maps.Point(50,100), //origin
             new google.maps.Point(anchor_left, anchor_top) //anchor 
     );
 	markers.push( new google.maps.Marker({
