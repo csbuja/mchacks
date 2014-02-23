@@ -1,4 +1,3 @@
-var libxmljs = require('libxmljs');
 var http = require('http');
 
 /* return data to caller
@@ -18,7 +17,8 @@ module.exports = function(options) {
   return http.get(options).on('response', function(response) {
     return response.on("data", function(chunk) {
       console.log("BODY: " + chunk);
-      return libxmljs.parseXmlString(response);
+      //return libxmljs.parseXmlString(response);
+      return {};
     });
   });
 }
