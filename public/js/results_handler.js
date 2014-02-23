@@ -158,7 +158,7 @@ function dropPin(pos1, pos2){
 			map: map,
 			draggable: false,
 			animation: google.maps.Animation.DROP
-			icon: iconBase + '../img/mapBegin.png'
+			//icon: iconBase + '../img/mapBegin.png'
 		}));
 
 	markers.push( new google.maps.Marker({
@@ -166,7 +166,7 @@ function dropPin(pos1, pos2){
 			map: map,
 			draggable: false,
 			animation: google.maps.Animation.DROP
-			icon: iconBase + '../img/mapEnd.png'
+			//icon: iconBase + '../img/mapEnd.png'
 		}));
 
 
