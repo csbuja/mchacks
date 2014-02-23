@@ -16,8 +16,8 @@ $(document).ready(function () {
 	$('#header-form').submit( function(event){
 		event.preventDefault();
 		//clear errors
-		removeError('#position');
-		removeError('#destination');
+		clearError('#position');
+		clearError('#destination');
 		//do submit
 		console.log("submit button");
 		$('.result').remove();
@@ -34,8 +34,8 @@ $(document).ready(function () {
 		$('#position').prop('value','');
 		$('#destination').prop('value','');
 		//clear errors
-		removeError('#position');
-		removeError('#destination');
+		clearError('#position');
+		clearError('#destination');
 	});
 
 
@@ -144,7 +144,7 @@ function showError(itemSelector){
 	$(itemSelector).addClass('has-error');
 }
 
-function clearErrors(itemSelector){
+function clearError(itemSelector){
 	$(itemSelector).removeClass('has-error');
 }
 
