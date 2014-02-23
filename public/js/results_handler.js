@@ -1,3 +1,5 @@
+var clicked = "";
+
 $(document).ready(function () {
 
 
@@ -19,15 +21,13 @@ $(document).ready(function () {
 	$('.result').click( function(){
 
 		console.log('click click');
-
-
+		clicked = $(this).id;
 	});
 
 });
 
 function performSearch(){
-	$('.results_pg').append( $('.result #'+$('.results_pg').children().length) );
-	$('.results_pg').append( $('.result #'+$('.results_pg').children().length) );
-	$('.results_pg').append( $('.result #'+$('.results_pg').children().length) );
+	String s = $('.results_pg').children().length.toString();
+	 $('.results_pg').append( $('.result #'+s.toString() ) );
 
 };
