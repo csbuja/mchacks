@@ -188,7 +188,9 @@ function gatherData(data)
 			duration = data.legs[i].duration['text'];
 		}
 
-		totalDist += parseFloat(data.legs[i].distance.text);
+		var d = data.legs[i].distance.text.toString();
+		d.replace(',', '');
+		totalDist += parseFloat(d);
 	}
 
 
