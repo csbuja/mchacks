@@ -81,7 +81,10 @@ function geocodeAddress(op){
 	{
 		$('.result').remove();
 		dropPin(latLng1, latLng2);
-		performSearch();
+		performSearch( function(data){
+			// CREATE CHILD OBJECTS FOR RESULTS_PG;
+
+		});
 	}
 }
 // ========================================================================================
@@ -97,10 +100,12 @@ function geocodeAddress(op){
 // ========================================================================================
 // helper function to perform search.
 
-function performSearch(){
+function performSearch(cb){
+	var data;
 	String s = $('.results_pg').children().length.toString();
 	// $('.results_pg').append( $('.result #'+s.toString() ) );
 
+	cb(data); // CREATE CHILD OBJECTS.
 };
 // ========================================================================================
 // ========================================================================================
