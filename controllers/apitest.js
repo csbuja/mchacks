@@ -3,46 +3,12 @@
 * Home page.
 */
 
-var http = require('http'),
-  fs = require('fs'),
-  xml2js = require('xml2js');
-
-////////// code to get xml from url
-var data = (function(command) {
-  console.log('export...'+command);
-  var options = {
-    host: 'webservices.nextbus.com',
-    port: 80,
-    path: '/service/publicXMLFeed?a=stl&command='+command,
-    method: 'GET'
-  };
-  return http.request(options, function(err, res) {
-    res.setEncoding('utf8');
-    
-    var fullResponse = "";
-    
-    res.on('data', function (chunk) {
-      fullResponse += chunk;
-      console.log('chunk logged: ' + chunk);
-    });
-    
-    return res.on('end', function() {
-      var ret = parser.parseString(fullResponse);
-      console.log('returning...'+ret);
-      return ret;
-    });
-  });
-  
-  //code to parse xml
-  var jsonstring = "";
-  var jsonObj;
-  var parser = new xml2js.Parser();
-})('routeList');
+var routeList = require('./models/RouteList')('routeList');
 
 exports.index = function(req, res) {
   res.render('apitest', {
     title: 'API Test',
-    data: data
+    data: routeList
   });
-  console.log(data);
+  console.log(routeList);
 };
