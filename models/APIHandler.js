@@ -22,7 +22,7 @@ module.exports = {
       res.on('data', function (chunk) {
         fullResponse += chunk;
       });
-      
+      console.log(fullResponse);
       return parser.parseString(fullResponse, function(err,result){
         //Extract the value from the data element
         extractedData = result['data'];
