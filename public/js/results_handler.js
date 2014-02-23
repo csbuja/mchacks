@@ -278,8 +278,7 @@ function gatherData(data)
 			text : duration
 		})
 	);
-)
 
-}
+};
 
 
