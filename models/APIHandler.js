@@ -22,13 +22,13 @@ module.exports = {
       res.on('data', function (chunk) {
         fullResponse += chunk;
       });
-      console.log(fullResponse);
-      return parser.parseString(fullResponse, function(err,result){
+
+      parser.parseString(fullResponse, function(err,result){
         //Extract the value from the data element
         extractedData = result['data'];
       });
+      return extractedData;
     });
-    console.log(extractedData);
     return extractedData;
   }
 }
