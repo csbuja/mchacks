@@ -69,6 +69,7 @@ function geocodeAddress(op){
     	}
     	else 
     	{
+    		alert("Geocode was not successful for the following reason: " + status);
     		if(op == true)
    			{
    				latLng1 = null;
