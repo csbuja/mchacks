@@ -197,6 +197,7 @@ function gatherData(data)
 	var departing_add;
 	var arriving_add;
 	var duration;
+	var isKm;
 
 	for(var i = 0; i < data.legs.length; i++)
 	{
@@ -207,6 +208,8 @@ function gatherData(data)
 			arriving_time = data.legs[i].arrival_time['text'];
 			arriving_add = data.legs[i].end_address;
 			duration = data.legs[i].duration['text'];
+			//if dist has 'km' in it, it's in km
+			isKm = data.legs[i].distance.text.toString().search('km') >= 0;
 		}
 
 		var d = data.legs[i].distance.text.toString();
@@ -220,6 +223,11 @@ function gatherData(data)
 	if (data.legs.length > 0) {
     		//then results for the journey should be visible
 		$('.results_pg').fadeIn();
+		//and also we should convert the distance
+		if (isKm) {
+			totalDist = totalDist / .621371;
+		}
+		totalDist += 'mi';
 	}
 
 
