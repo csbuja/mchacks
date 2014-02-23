@@ -84,7 +84,7 @@ function geocodeAddress(op){
 
 		if(latLng1 != null && latLng2 != null)
 		{
-			map.clearOverlays();
+			clearOverlays();
 			$('.result').remove();
 			dropPin(latLng1, latLng2);
 			performSearch( function(data){
@@ -192,6 +192,11 @@ function dropPin(pos1, pos2){
 // ========================================================================================
 
 
-
+function clearOverlays() {
+  for (var i = 0; i < markers.length; i++ ) {
+    markers[i].setMap(null);
+  }
+  markers.length = 0;
+}
 
 
