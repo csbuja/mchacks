@@ -16,7 +16,7 @@ var data = (function(command) {
     path: '/service/publicXMLFeed?a=stl&command='+command,
     method: 'GET'
   };
-  return http.request(options, function(res) {
+  return http.request(options, function(err, res) {
     res.setEncoding('utf8');
     
     var fullResponse = "";
