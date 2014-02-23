@@ -19,10 +19,7 @@ $(document).ready(function () {
 	});
 
 	$('#clear').click( function(){
-		console.log("clear button");
-		directionsDisplay.setMap(null);
-		clearOverlays();
-		map.clear();
+		clear();
 	});
 
 
@@ -36,7 +33,11 @@ $(document).ready(function () {
 
 
 
-
+function clear(){
+		console.log("clear button");
+		directionsDisplay.setMap(null);
+		clearOverlays();
+}
 
 
 // ========================================================================================
@@ -75,7 +76,7 @@ function geocodeAddress(op){
 
 		if(latLng1 != null && latLng2 != null)
 		{
-			clearOverlays();
+			clear();
 			$('.result').remove();
 			dropPin(latLng1, latLng2);
 			performSearch( function(data){
