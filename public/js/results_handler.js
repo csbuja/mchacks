@@ -19,20 +19,18 @@ $(document).ready(function () {
 	});
 
 
-
-	$('#clear').click( function(){
-		console.log("clear button");
-		directionDisplay.setMap(null);
-		clearOverlays();
-		map.clear();
-	});
-
 });
 
 // ========================================================================================
 // ========================================================================================
 
 
+$('#clear').click( function(){
+		console.log("clear button");
+		directionDisplay.setMap(null);
+		clearOverlays();
+		map.clear();
+	});
 
 
 
@@ -165,6 +163,7 @@ function dropPin(pos1, pos2){
   	directionsService.route(request, function(response, status){
     	if (status == google.maps.DirectionsStatus.OK)
     	{
+    		directionsDisplay.setMap(map);
    			directionsDisplay.setDirections(response);
    			gatherData( response['routes'][0] );
     	}
