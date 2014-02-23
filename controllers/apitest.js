@@ -13,7 +13,7 @@ exports.index = function(req, res) {
   var options = {
       host: 'webservices.nextbus.com',
       port: 80,
-      path: '/service/publicXMLFeed?a=stl&command='+command,
+      path: '/service/publicXMLFeed?a=stl&command=routeList',
       method: 'GET'
     };
   var request = http.request(options, function(err,response) {
