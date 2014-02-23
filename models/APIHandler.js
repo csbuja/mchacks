@@ -17,6 +17,7 @@ getData = function(command) {
     
     res.on('data', function (chunk) {
       fullResponse += chunk;
+      console.log('chunk logged: ' + chunk);
     });
     
     return res.on('end', function(){
