@@ -203,9 +203,11 @@ function clearOverlays() {
 
 function gatherData(data)
 {
+	console.log(data);
 	var totalDist = 0.0;
 	for(var i = 0; i < data.length; i++)
 	{
+		console.log(i);
 		if(i == 0);
 		else if(i == data.length-1);
 
