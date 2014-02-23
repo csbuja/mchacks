@@ -139,13 +139,13 @@ function initializeMap() {
 	var old = document.getElementById('results_pg');
 	var newObj = document.createElement('div');
 	newObj.setAttribute('id', 'result-head');
-	old.appendChild(newObj);
+	old.append(newObj);
 
 	old = document.getElementById('result-head');
 	newObj = document.createElement('div');
 	newObj.setAttribute('id', 'start');
 	newObj.innerHTML = 'Starting from:';
-	old.appendChild(newObj);
+	old.append(newObj);
 };
 // ========================================================================================
 // ========================================================================================
