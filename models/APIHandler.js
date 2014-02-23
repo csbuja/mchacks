@@ -1,4 +1,4 @@
-var libxmljs = require('xmljs');
+var libxmljs = require('libxmljs');
 var http = require('http');
 var XmlStream = require('xml-stream');
 
