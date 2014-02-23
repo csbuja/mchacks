@@ -5,7 +5,7 @@ var http = require('http'),
 ////////// code to get xml from url
 module.exports = {
   get: function(command) {
-    /*console.log('export...'+command);
+    console.log('export...'+command);
     var parser = new xml2js.Parser();
     var options = {
       host: 'webservices.nextbus.com',
@@ -13,7 +13,7 @@ module.exports = {
       path: '/service/publicXMLFeed?a=stl&command='+command,
       method: 'GET'
     };
-    return http.request(options, function(res) {
+    var req = http.request(options, function(res) {
       res.setEncoding('utf8');
       
       var fullResponse = "";
@@ -27,9 +27,9 @@ module.exports = {
         //Extract the value from the data element
         extractedData = result['data'];
         console.log(extractedData);
-        return {};//extractedData;
       });
-    });*/
+    });
+    return req.body;
     return {};
   }
 }
